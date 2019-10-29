@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Tech</groupId>
+  <artifactId>Tech</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  <dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.14.0</version>
+		</dependency>
+		 <dependency>           
+            <groupId>org.testng</groupId>                               
+            <artifactId>testng</artifactId>                             
+            <version>6.8</version>                                                                   
+       </dependency>  
+      <dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-java</artifactId>
+		<version>3.4.0</version>
+	</dependency>
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-chrome-driver</artifactId>
+    <version>3.141.59</version>
+</dependency>
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.0.0</version>
+    <scope>test</scope>
+</dependency>
+       </dependencies>
+   <build>
+    <sourceDirectory>src</sourceDirectory>
+   <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-plugin-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <goalPrefix>plugin</goalPrefix>
+          <outputDirectory>target/dir</outputDirectory>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>com.selenium.test.Demo.java</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+      </plugin>
+       <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5</version>
+        <configuration>
+          <source/>
+          <target/>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.19.1</version>
+                <inherited>true</inherited>
+            <configuration>
+                <suiteXmlFile>testng.xml</suiteXmlFile>
+            </configuration>
+    </plugin>
+    </plugins>
+  </build>
+</project>
